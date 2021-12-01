@@ -135,3 +135,18 @@ input[type="checkbox"] {
   padding: 2% 5%;
   margin-top: 2%;
 }
+#addCrime {
+  font-size: 16pt;
+  background-color: rgb(90, 128, 172);
+  color: white;
+  margin-top: 2%;
+  display: block;
+  width: 20%;
+  height: 40px;
+  border-radius: 10px;
+  border: solid thin white;
+  transition: all 500ms ease;
+}
+#addCrime:hover {
+  background-color: rgb(29, 58, 95);
+}
