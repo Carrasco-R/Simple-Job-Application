@@ -46,12 +46,7 @@ h3 {
   border-radius: 15px;
   box-shadow: 0px 0px 20px rgba(128, 128, 128, 0.3);
 }
-.field-inline {
-  display: inline-block;
-}
-.field-block {
-  display: block;
-}
+
 /*============================= Inputs & Labels =============================*/
 input,
 label {
@@ -59,15 +54,65 @@ label {
 }
 input[type="text"] {
   height: 30px;
+  width: 100%;
   border-radius: 5px;
   border: thin solid grey;
+  font-size: 14pt;
 }
-.size-sm {
-  width: 150px;
+.checkbox-field input,
+.radio-field input,
+.radio-field label {
+  display: inline;
 }
-.size-rg {
-  width: 300px;
+.radio-field label,
+.checkbox-field label {
+  font-size: 90%;
 }
-.size-lg {
-  width: 600px;
+.label {
+  margin-top: 1%;
+}
+
+.span-1 {
+  grid-column: span 1;
+}
+.span-2 {
+  grid-column: span 2;
+}
+.span-3 {
+  grid-column: span 3;
+}
+.span-4 {
+  grid-column: span 4;
+}
+.span-5 {
+  grid-column: span 5;
+}
+.span-6 {
+  grid-column: span 6;
+}
+.span-7 {
+  grid-column: span 7;
+}
+.span-8 {
+  grid-column: span 8;
+}
+.span-9 {
+  grid-column: span 9;
+}
+.span-10 {
+  grid-column: span 10;
+}
+.span-11 {
+  grid-column: span 11;
+}
+.span-12 {
+  grid-column: span 12;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  row-gap: 5px;
+  column-gap: 20px;
 }

@@ -4,7 +4,7 @@
   "insertPragma": false,
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
-  "printWidth": 120,
+  "printWidth": 180,
   "requirePragma": false,
   "semi": true,
   "singleQuote": false,

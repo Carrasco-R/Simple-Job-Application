@@ -16,36 +16,96 @@
         <h2>Contact Information</h2>
         <hr />
 
-        <h3>Name</h3>
-        <div class="field-inline">
-          <label for="firstName">First Name</label>
-          <input class="size-rg" type="text" name="firstName" id="firstName" />
-        </div>
-        <div class="field-inline">
-          <label for="middleName">Middle Name </label>
-          <input class="size-rg" type="text" name="middleName" id="middleName" />
-        </div>
-        <div class="field-inline">
-          <label for="lastName">Last Name </label>
-          <input class="size-rg" type="text" name="lastName" id="lastName" />
+        <h3>Basic Information</h3>
+        <div class="field-grid">
+          <div class="span-3">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" />
+          </div>
+          <div class="span-3">
+            <label for="middleName">Middle Name</label>
+            <input type="text" name="middleName" id="middleName" />
+          </div>
+          <div class="span-3">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" />
+          </div>
+          <div class="span-3"></div>
+          <div class="span-3">
+            <label for="telephone">Telephone</label>
+            <input type="text" name="telephone" id="telephone" />
+          </div>
+          <div class="span-3">
+            <label for="mobilephone">Mobile Phone</label>
+            <input type="text" name="mobilephone" id="mobilephone" />
+          </div>
+          <div class="span-6"></div>
+          <div class="span-3">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" />
+          </div>
+          <div class="span-9"></div>
+          <div class="span-10"></div>
+          <div class="span-6 radio-field">
+            <div class="label">Are you at least 18 years old?</div>
+            <label for="atleast18">Yes</label>
+            <input type="radio" name="over18" id="atleast18" />
+            <label for="under18">No</label>
+            <input type="radio" name="over18" id="under18" />
+          </div>
         </div>
 
         <h3>Address</h3>
-        <div class="field-block">
-          <label for="street">Street Address</label>
-          <input class="size-rg" type="text" name="street" id="street" />
+        <div class="field-grid">
+          <div class="span-5">
+            <label for="street">Street Address</label>
+            <input type="text" name="street" id="street" />
+          </div>
+          <div class="span-7"></div>
+          <div class="span-2">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" />
+          </div>
+          <div class="span-1">
+            <label for="state">State</label>
+            <input type="text" name="state" id="state" />
+          </div>
+          <div class="span-2">
+            <label for="zip">Zip</label>
+            <input type="text" name="zip" id="zip" />
+          </div>
         </div>
-        <div class="field-inline">
-          <label for="city">City</label>
-          <input class="size-rg" type="text" name="city" id="city" />
-        </div>
-        <div class="field-inline">
-          <label for="city">State</label>
-          <input class="size-sm" type="text" name="city" id="city" />
-        </div>
-        <div class="field-inline">
-          <label for="city">Zip</label>
-          <input class="size-sm" type="text" name="city" id="city" />
+
+        <h3>Personal Information</h3>
+        <div class="field-grid">
+          <div class="span-3">
+            <label for="position">Position Applied For</label>
+            <input type="text" name="position" id="position" />
+          </div>
+          <div class="span-2">
+            <label for="ssn">Social Security #</label>
+            <input type="text" name="ssn" id="ssn" />
+          </div>
+          <div class="span-12 checkbox-field">
+            <div class="label">Race</div>
+            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />White</label>
+            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />Black or African-American</label>
+            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />American-Indian or Alaskan Native</label>
+            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />Asian</label>
+            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />Hawaiian Native of Pacific Islander</label>
+            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />Hispanic orLatino</label>
+          </div>
+          <div class="span-12 radio-field">
+            <div class="label">Gender</div>
+            <label for="male"><input type="radio" name="male" id="male" /> Male</label>
+            <label for="female"><input type="radio" name="female" id="female" />Female</label>
+            <label for="other"><input type="radio" name="other" id="other" />Other</label>
+          </div>
+          <div class="span-12 radio-field">
+            <div class="label">Employment Desired</div>
+            <label for="full-time"><input type="radio" name="full-time" id="full-time" />Full time</label>
+            <label for="part-time"><input type="radio" name="part-time" id="part-time" />Part time</label>
+          </div>
         </div>
       </div>
     </main>
