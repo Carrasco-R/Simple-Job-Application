@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
     <title>Employment Application</title>
   </head>
   <body>
@@ -12,102 +13,256 @@
       <h1>UNFinished Business</h1>
     </header>
     <main>
-      <div class="card">
-        <h2>Contact Information</h2>
-        <hr />
+      <form id="form">
+        <!-- CONTACT -->
+        <div class="card">
+          <h2>Contact Information</h2>
+          <hr />
 
-        <h3>Basic Information</h3>
-        <div class="field-grid">
-          <div class="span-3">
-            <label for="firstName">First Name</label>
-            <input type="text" name="firstName" id="firstName" />
+          <h3>Basic Information</h3>
+          <div class="field-grid">
+            <div class="span-3">
+              <label for="firstName">First Name</label>
+              <input type="text" name="firstName" id="firstName" />
+            </div>
+            <div class="span-3">
+              <label for="middleName">Middle Name</label>
+              <input type="text" name="middleName" id="middleName" />
+            </div>
+            <div class="span-3">
+              <label for="lastName">Last Name</label>
+              <input type="text" name="lastName" id="lastName" />
+            </div>
+            <div class="span-3"></div>
+            <div class="span-3">
+              <label for="telephone">Telephone</label>
+              <input type="text" name="telephone" id="telephone" />
+            </div>
+            <div class="span-3">
+              <label for="mobilephone">Mobile Phone</label>
+              <input type="text" name="mobilephone" id="mobilephone" />
+            </div>
+            <div class="span-6"></div>
+            <div class="span-3">
+              <label for="email">E-mail</label>
+              <input type="text" name="email" id="email" />
+            </div>
+            <div class="span-9"></div>
+            <div class="span-10"></div>
+            <div class="span-6 radio-field">
+              <div class="label">Are you at least 18 years old?</div>
+              <input type="radio" name="over18" id="atleast18" />
+              <label for="atleast18">Yes</label>
+              <input type="radio" name="over18" id="under18" />
+              <label for="under18">No</label>
+            </div>
           </div>
-          <div class="span-3">
-            <label for="middleName">Middle Name</label>
-            <input type="text" name="middleName" id="middleName" />
+
+          <h3>Address</h3>
+          <div class="field-grid">
+            <div class="span-5">
+              <label for="street">Street Address</label>
+              <input type="text" name="street" id="street" />
+            </div>
+            <div class="span-7"></div>
+            <div class="span-2">
+              <label for="city">City</label>
+              <input type="text" name="city" id="city" />
+            </div>
+            <div class="span-1">
+              <label for="state">State</label>
+              <input type="text" name="state" id="state" />
+            </div>
+            <div class="span-2">
+              <label for="zip">Zip</label>
+              <input type="text" name="zip" id="zip" />
+            </div>
           </div>
-          <div class="span-3">
-            <label for="lastName">Last Name</label>
-            <input type="text" name="lastName" id="lastName" />
-          </div>
-          <div class="span-3"></div>
-          <div class="span-3">
-            <label for="telephone">Telephone</label>
-            <input type="text" name="telephone" id="telephone" />
-          </div>
-          <div class="span-3">
-            <label for="mobilephone">Mobile Phone</label>
-            <input type="text" name="mobilephone" id="mobilephone" />
-          </div>
-          <div class="span-6"></div>
-          <div class="span-3">
-            <label for="email">E-mail</label>
-            <input type="text" name="email" id="email" />
-          </div>
-          <div class="span-9"></div>
-          <div class="span-10"></div>
-          <div class="span-6 radio-field">
-            <div class="label">Are you at least 18 years old?</div>
-            <label for="atleast18">Yes</label>
-            <input type="radio" name="over18" id="atleast18" />
-            <label for="under18">No</label>
-            <input type="radio" name="over18" id="under18" />
+
+          <h3>Personal Information</h3>
+          <div class="field-grid">
+            <div class="span-2">
+              <label for="ssn">Social Security #</label>
+              <input type="text" name="ssn" id="ssn" />
+            </div>
+            <div class="span-12 checkbox-field">
+              <div class="label">Race</div>
+              <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />White</label>
+              <label for="race-blackAfrAm"> <input type="checkbox" name="race-blackAfrAm" id="race-blackAfrAm" />Black or African-American</label>
+              <label for="race-amrIndAlskNtv"> <input type="checkbox" name="race-amrIndAlskNtv" id="race-amrIndAlskNtv" />American-Indian or Alaskan Native</label>
+              <label for="race-asian"> <input type="checkbox" name="race-asian" id="race-asian" />Asian</label>
+              <label for="race-hawiPaciIsld"> <input type="checkbox" name="race-hawiPaciIsld" id="race-hawiPaciIsld" />Hawaiian Native of Pacific Islander</label>
+              <label for="race-latino"> <input type="checkbox" name="race-latino" id="race-latino" />Hispanic or Latino</label>
+            </div>
+            <div class="span-12 radio-field">
+              <div class="label">Gender</div>
+              <label for="male"><input type="radio" name="gender" id="male" value="male" /> Male</label>
+              <label for="female"><input type="radio" name="gender" id="female" value="female" />Female</label>
+              <label for="other"><input type="radio" name="gender" id="other" value="other" />Other</label>
+              <input style="display: none" type="radio" name="gender" value="untouched" checked />
+            </div>
           </div>
         </div>
 
-        <h3>Address</h3>
-        <div class="field-grid">
-          <div class="span-5">
-            <label for="street">Street Address</label>
-            <input type="text" name="street" id="street" />
-          </div>
-          <div class="span-7"></div>
-          <div class="span-2">
-            <label for="city">City</label>
-            <input type="text" name="city" id="city" />
-          </div>
-          <div class="span-1">
-            <label for="state">State</label>
-            <input type="text" name="state" id="state" />
-          </div>
-          <div class="span-2">
-            <label for="zip">Zip</label>
-            <input type="text" name="zip" id="zip" />
+        <!-- AVAILABILITY -->
+        <div class="card">
+          <h2>Availability</h2>
+          <hr />
+          <div class="field-grid">
+            <div class="span-3">
+              <label for="position">Position Applied For</label>
+              <input type="text" name="position" id="position" />
+            </div>
+            <div class="span-3 radio-field">
+              <div class="label">Employment Desired</div>
+              <label for="full-time"><input type="radio" name="employmentDesired" id="full-time" value="full-time" />Full time</label>
+              <label for="part-time"><input type="radio" name="employmentDesired" id="part-time" value="part-time" />Part time</label>
+              <input style="display: none" type="radio" name="employmentDesired" value="untouched" checked />
+            </div>
+            <div class="span-12 checkbox-field">
+              <div class="label">Days Available to Work</div>
+              <label for="sun"> <input type="checkbox" name="availability" id="sun" value="sun" />Sunday</label>
+              <label for="mon"> <input type="checkbox" name="availability" id="mon" value="mon" />Monday</label>
+              <label for="tues"> <input type="checkbox" name="availability" id="tues" value="tues" />Tuesday</label>
+              <label for="wed"> <input type="checkbox" name="availability" id="wed" value="wed" />Wednesday</label>
+              <label for="thurs"><input type="checkbox" name="availability" id="thurs" value="thurs" />Thursday</label>
+              <label for="fri"> <input type="checkbox" name="availability" id="fri" value="fri" />Friday</label>
+              <label for="sat"> <input type="checkbox" name="availability" id="sat" value="sat" />Saturday</label>
+            </div>
+            <div class="span-12 radio-field">
+              <div class="label">Available to Work at Night?</div>
+              <label for="available"><input type="radio" name="availableNights" id="available" value="yes" />Yes</label>
+              <label for="not-available"><input type="radio" name="availableNights" id="not-available" value="no" />No</label>
+              <input style="display: none" type="radio" name="availableNights" value="untouched" checked />
+            </div>
+            <div class="span-3">
+              <label for="dateAvailable">Date Avilable for Work</label>
+              <input type="date" name="dateAvailable" id="dateAvailable" />
+            </div>
+            <div class="span-2">
+              <label for="hoursAvailable">Weekly Hours</label>
+              <input type="number" name="hoursAvailable" id="hoursAvailable" max="40" />
+            </div>
+            <div class="span-12 radio-field">
+              <div class="label">Do you have a reliable form of transportation?</div>
+              <label for="reliable"><input type="radio" name="reliableTransportation" id="reliable" value="yes" />Yes</label>
+              <label for="unreliable"><input type="radio" name="reliableTransportation" id="unreliable" value="no" />No</label>
+              <input style="display: none" type="radio" name="reliableTransportation" value="untouched" checked />
+            </div>
           </div>
         </div>
 
-        <h3>Personal Information</h3>
-        <div class="field-grid">
-          <div class="span-3">
-            <label for="position">Position Applied For</label>
-            <input type="text" name="position" id="position" />
+        <!-- CRIMINAL BACKGROUND -->
+        <div class="card">
+          <h2>Criminial Background</h2>
+          <hr />
+          <h3>General</h3>
+          <div class="field-grid">
+            <div class="span-12 radio-field">
+              <div class="label">Have you ever been convicted of a crime?</div>
+              <label><input type="radio" name="pastConviction" value="yes" />Yes</label>
+              <label><input type="radio" name="pastConviction" value="no" />No</label>
+              <input style="display: none" type="radio" name="pastConviction" value="untouched" checked />
+            </div>
           </div>
-          <div class="span-2">
-            <label for="ssn">Social Security #</label>
-            <input type="text" name="ssn" id="ssn" />
+          <h3>Vehicular</h3>
+          <div class="field-grid">
+            <div class="span-6">
+              <label for="accidentsPast3Years">How many traffic accidents have you had in the past three years?</label>
+              <input type="number" name="accidentsPast3Years" id="accidentsPast3Years" />
+            </div>
+            <div class="span-6"></div>
+            <div class="span-6">
+              <label for="violationsPast3Years">How many traffic violations have you had in the past three years?</label>
+              <input type="number" name="violationsPast3Years" id="violationsPast3Years" />
+            </div>
+            <div class="span-6"></div>
+            <div class="span-6 radio-field">
+              <div class="label">Have you ever been stopped for suspension of drinking and driving?</div>
+              <label><input type="radio" name="stoppedForDUI" value="yes" />Yes</label>
+              <label><input type="radio" name="stoppedForDUI" value="no" />No</label>
+              <input style="display: none" type="radio" name="stoppedForDUI" value="untouched" checked />
+            </div>
+            <div class="span-12 radio-field">
+              <div class="label">Have you ever been stopped for suspension of distracted driving?</div>
+              <label><input type="radio" name="stoppedForDistractedDriving" value="yes" />Yes</label>
+              <label><input type="radio" name="stoppedForDistractedDriving" value="no" />No</label>
+              <input style="display: none" type="radio" name="stoppedForDistractedDriving" value="untouched" checked />
+            </div>
           </div>
-          <div class="span-12 checkbox-field">
-            <div class="label">Race</div>
-            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />White</label>
-            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />Black or African-American</label>
-            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />American-Indian or Alaskan Native</label>
-            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />Asian</label>
-            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />Hawaiian Native of Pacific Islander</label>
-            <label for="race-white"> <input type="checkbox" name="race-white" id="race-white" />Hispanic orLatino</label>
+          /// reactive table here for past crimes
+        </div>
+
+        <!-- REFERENCES -->
+        <div class="card">
+          <h2>References</h2>
+          <hr />
+          /// reactive table here for References
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="card">
+          <h2>Education</h2>
+          <hr />
+          /// reactive table here for education
+        </div>
+
+        <!-- WORK EXPERIENCE -->
+        <div class="card">
+          <h2>Work Experience</h2>
+          <hr />
+          /// reactive table here for work experience
+        </div>
+
+        <!-- ADDITIONAL SKILLS -->
+        <div class="card">
+          <h2>Additional Skills & Experience</h2>
+          <hr />
+          <textarea
+            style="font-size: 16pt; width: 100%; border-radius: 5px"
+            name="additionalSkills"
+            id="additionalSkills"
+            rows="10"
+            placeholder="Provide any additional skills, experiences and other important information that supports your application that has not been listed elsewhere in this application."
+          ></textarea>
+        </div>
+
+        <!-- ACKNOWLEDGEMENT -->
+        <div class="card">
+          <h2>Acknowledgement</h2>
+          <hr />
+          <div style="font-size: 18pt; overflow-y: scroll; max-height: 30vh">
+            <p>I AGREE THAT:</p>
+            <p>
+              APPLYING OR STARTING A JOB, REGARDLESS OF ANY WORK MANUALS OR POLICIES, IS NOT A CONTRACT. THE JOB CAN ONLY BE CHANGED BY THE PRESIDENT OF UNFINISHED BUSINESS. MYSELF
+              OR THE COMPANY CAN END EMPLOYMENT AT ANY TIME. I KNOW THAT THE COMPANY CAN LOWER BENEFITS.
+            </p>
+            <p>
+              I ALLOW ALL STATEMENTS IN THIS APPLICATION TO BE CHECKED. I KNOW THAT LYING OR NOT TELLING OF ALL INFORMATION COULD CAUSE ME TO BE FIRED. I ALLOW THE COMPANY TO
+              CONTACT SCHOOLS, PREVIOUS JOBS, AND OTHERS. I WILL NOT BLAME THE COMPANY FOR ANY PROBLEMS CAUSED BY THAT CONTACT.
+            </p>
+            <p>
+              I KNOW THAT UNFINISHED BUSINESS REQUIRES DRUG TESTING. I AGREE TO BE TESTED. I MUST PASS DRUG TESTS TO REMAIN AN EMPLOYEE. I ALSO KNOW THAT I MAY NEED TO PASS
+              JOB-RELATED PHYSICAL EXAMS.
+            </p>
+            <p>
+              I UNDERSTAND THAT UNFINISHED BUSINESS MAY CHECK MY CREDIT SCORES AND OTHER BACKGROUND INFORMATION. IF I WRITE A REQUEST, THE COMPANY WILL GIVE ME MORE INFORMATION HOW
+              THIS IS USED. THIS IS REQUIRED BY THE FAIR CREDIT REPORTING ACT.
+            </p>
+            <p>I ALSO KNOW THAT MY EMPLOYMENT IS IN A TRIAL PERIOD FOR 60 DAYS. MY EMPLOYMENT CAN END AT ANY TIME.</p>
           </div>
-          <div class="span-12 radio-field">
-            <div class="label">Gender</div>
-            <label for="male"><input type="radio" name="male" id="male" /> Male</label>
-            <label for="female"><input type="radio" name="female" id="female" />Female</label>
-            <label for="other"><input type="radio" name="other" id="other" />Other</label>
-          </div>
-          <div class="span-12 radio-field">
-            <div class="label">Employment Desired</div>
-            <label for="full-time"><input type="radio" name="full-time" id="full-time" />Full time</label>
-            <label for="part-time"><input type="radio" name="part-time" id="part-time" />Part time</label>
+          <div class="field-grid">
+            <div class="span-12 radio-field">
+              <div class="label">Do you accept the terms above?</div>
+              <label><input type="radio" name="acceptedTerms" value="yes" />Yes</label>
+              <label><input type="radio" name="acceptedTerms" value="no" />No</label>
+              <input style="display: none" type="radio" name="acceptedTerms" value="untouched" checked />
+            </div>
           </div>
         </div>
-      </div>
+
+        <button type="submit">Submit</button>
+      </form>
     </main>
     <footer>&#169; 2021 UNFinished Business</footer>
   </body>
