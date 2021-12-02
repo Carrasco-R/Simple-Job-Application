@@ -53,6 +53,7 @@ input,
 label {
   display: block;
 }
+select,
 input[type="number"],
 input[type="text"],
 input[type="date"] {
@@ -127,26 +128,35 @@ input[type="checkbox"] {
   row-gap: 10px;
   column-gap: 20px;
 }
-
+.experience,
+.educationItem,
+.reference,
 .crime {
   border-left: thick solid rgba(0, 0, 0, 0.5);
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 40px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   padding: 2% 5%;
   margin-top: 2%;
 }
+#addWorkExp,
+#addEducationItem,
+#addReference,
 #addCrime {
   font-size: 16pt;
   background-color: rgb(90, 128, 172);
   color: white;
   margin-top: 2%;
   display: block;
-  width: 20%;
+  min-width: 20%;
+  width: auto;
   height: 40px;
   border-radius: 10px;
   border: solid thin white;
   transition: all 500ms ease;
 }
+#addWorkExp:hover,
+#addEducationItem:hover,
+#addReference:hover,
 #addCrime:hover {
   background-color: rgb(29, 58, 95);
 }
