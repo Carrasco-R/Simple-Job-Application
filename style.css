@@ -53,6 +53,10 @@ input,
 label {
   display: block;
 }
+input[type="date"],
+textarea {
+  font-family: "Roboto", sans-serif;
+}
 select,
 input[type="number"],
 input[type="text"],

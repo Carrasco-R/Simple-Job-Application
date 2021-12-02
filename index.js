@@ -537,7 +537,7 @@ window.onload = function () {
 
     let experienceContactPermissionLabel = document.createElement("div");
     experienceContactPermissionLabel.setAttribute("class", "label");
-    experienceContactPermissionLabel.innerText = "Crime Classification";
+    experienceContactPermissionLabel.innerText = "May we contact this employer?";
 
     let experienceContactPermissionOpt1Label = document.createElement("label");
     let experienceContactPermissionOpt1Input = document.createElement("input");
@@ -545,7 +545,7 @@ window.onload = function () {
     experienceContactPermissionOpt1Input.setAttribute("name", `experienceContactPermission${counter}`);
     experienceContactPermissionOpt1Input.setAttribute("value", "yes");
     experienceContactPermissionOpt1Label.appendChild(experienceContactPermissionOpt1Input);
-    experienceContactPermissionOpt1Label.innerHTML += "Misdemeanor";
+    experienceContactPermissionOpt1Label.innerHTML += "Yes";
 
     let experienceContactPermissionOpt2Label = document.createElement("label");
     let experienceContactPermissionOpt2Input = document.createElement("input");
@@ -553,7 +553,7 @@ window.onload = function () {
     experienceContactPermissionOpt2Input.setAttribute("name", `experienceContactPermission${counter}`);
     experienceContactPermissionOpt2Input.setAttribute("value", "no");
     experienceContactPermissionOpt2Label.appendChild(experienceContactPermissionOpt2Input);
-    experienceContactPermissionOpt2Label.innerHTML += "Felony";
+    experienceContactPermissionOpt2Label.innerHTML += "No";
 
     let experienceContactPermissionOptDef = document.createElement("input");
     experienceContactPermissionOptDef.setAttribute("style", "display: none");
@@ -567,25 +567,180 @@ window.onload = function () {
     experienceContactPermissionContainer.appendChild(experienceContactPermissionOpt2Label);
     experienceContactPermissionContainer.appendChild(experienceContactPermissionOptDef);
 
+    // =========================== job title container ===========================
+    let experiencePositionTitleContainer = document.createElement("div");
+    experiencePositionTitleContainer.setAttribute("class", "span-6");
+
+    // label
+    let experiencePositionTitleLabel = document.createElement("label");
+    experiencePositionTitleLabel.setAttribute("for", `experiencePositionTitle${counter}`);
+    experiencePositionTitleLabel.innerHTML = "Job Title";
+    // input
+    let experiencePositionTitleInput = document.createElement("input");
+    experiencePositionTitleInput.setAttribute("type", "text");
+    experiencePositionTitleInput.setAttribute("name", `experiencePositionTitle${counter}`);
+    experiencePositionTitleInput.setAttribute("id", `experiencePositionTitle${counter}`);
+
+    experiencePositionTitleContainer.appendChild(experiencePositionTitleLabel);
+    experiencePositionTitleContainer.appendChild(experiencePositionTitleInput);
+
+    // =========================== employment start container ===========================
+    let experienceEmploymentStartContainer = document.createElement("div");
+    experienceEmploymentStartContainer.setAttribute("class", "span-3");
+
+    // label
+    let experienceEmploymentStartLabel = document.createElement("label");
+    experienceEmploymentStartLabel.setAttribute("for", `experienceEmploymentStart${counter}`);
+    experienceEmploymentStartLabel.innerHTML = "Employment Start";
+    // input
+    let experienceEmploymentStartInput = document.createElement("input");
+    experienceEmploymentStartInput.setAttribute("type", "date");
+    experienceEmploymentStartInput.setAttribute("name", `experienceEmploymentStart${counter}`);
+    experienceEmploymentStartInput.setAttribute("id", `experienceEmploymentStart${counter}`);
+
+    experienceEmploymentStartContainer.appendChild(experienceEmploymentStartLabel);
+    experienceEmploymentStartContainer.appendChild(experienceEmploymentStartInput);
+
+    // =========================== employment end container ===========================
+    let experienceEmploymentEndContainer = document.createElement("div");
+    experienceEmploymentEndContainer.setAttribute("class", "span-3");
+
+    // label
+    let experienceEmploymentEndLabel = document.createElement("label");
+    experienceEmploymentEndLabel.setAttribute("for", `experienceEmploymentEnd${counter}`);
+    experienceEmploymentEndLabel.innerHTML = "Employment End";
+    // input
+    let experienceEmploymentEndInput = document.createElement("input");
+    experienceEmploymentEndInput.setAttribute("type", "date");
+    experienceEmploymentEndInput.setAttribute("name", `experienceEmploymentEnd${counter}`);
+    experienceEmploymentEndInput.setAttribute("id", `experienceEmploymentEnd${counter}`);
+
+    experienceEmploymentEndContainer.appendChild(experienceEmploymentEndLabel);
+    experienceEmploymentEndContainer.appendChild(experienceEmploymentEndInput);
+
+    // =========================== pay/salary start container ===========================
+    let experienceCompensationStartContainer = document.createElement("div");
+    experienceCompensationStartContainer.setAttribute("class", "span-3");
+
+    // label
+    let experienceCompensationStartLabel = document.createElement("label");
+    experienceCompensationStartLabel.setAttribute("for", `experienceCompensationStart${counter}`);
+    experienceCompensationStartLabel.innerHTML = "Starting Compensation";
+    // input
+    let experienceCompensationStartInput = document.createElement("input");
+    experienceCompensationStartInput.setAttribute("type", "number");
+    experienceCompensationStartInput.setAttribute("name", `experienceCompensationStart${counter}`);
+    experienceCompensationStartInput.setAttribute("id", `experienceCompensationStart${counter}`);
+
+    experienceCompensationStartContainer.appendChild(experienceCompensationStartLabel);
+    experienceCompensationStartContainer.appendChild(experienceCompensationStartInput);
+
+    // =========================== pay/salary end container ===========================
+    let experienceCompensationEndContainer = document.createElement("div");
+    experienceCompensationEndContainer.setAttribute("class", "span-3");
+
+    // label
+    let experienceCompensationEndLabel = document.createElement("label");
+    experienceCompensationEndLabel.setAttribute("for", `experienceCompensationEnd${counter}`);
+    experienceCompensationEndLabel.innerHTML = "Ending Compensation";
+    // input
+    let experienceCompensationEndInput = document.createElement("input");
+    experienceCompensationEndInput.setAttribute("type", "number");
+    experienceCompensationEndInput.setAttribute("name", `experienceCompensationEnd${counter}`);
+    experienceCompensationEndInput.setAttribute("id", `experienceCompensationEnd${counter}`);
+
+    experienceCompensationEndContainer.appendChild(experienceCompensationEndLabel);
+    experienceCompensationEndContainer.appendChild(experienceCompensationEndInput);
+
+    // =========================== duties textarea container ===========================
+    let experienceDutiesContainer = document.createElement("div");
+    experienceDutiesContainer.setAttribute("class", "span-6");
+
+    // label
+    let experienceDutiesLabel = document.createElement("label");
+    experienceDutiesLabel.setAttribute("for", `experienceDuties${counter}`);
+    experienceDutiesLabel.innerHTML = "Duties";
+    // input
+    let experienceDutiesTextArea = document.createElement("textarea");
+    experienceDutiesTextArea.setAttribute("style", "font-size: 16pt; width: 100%; border-radius: 5px");
+    experienceDutiesTextArea.setAttribute("name", `experienceDuties${counter}`);
+    experienceDutiesTextArea.setAttribute("id", `experienceDuties${counter}`);
+    experienceDutiesTextArea.setAttribute("rows", "8");
+    experienceDutiesTextArea.setAttribute("placeholder", "List duties performed, skills used, and advancements and promotions earned");
+
+    experienceDutiesContainer.appendChild(experienceDutiesLabel);
+    experienceDutiesContainer.appendChild(experienceDutiesTextArea);
+
+    // =========================== reason for leaving end container ===========================
+    let experienceReasonForLeavingContainer = document.createElement("div");
+    experienceReasonForLeavingContainer.setAttribute("class", "span-6");
+
+    // label
+    let experienceReasonForLeavingLabel = document.createElement("label");
+    experienceReasonForLeavingLabel.setAttribute("for", `experienceReasonForLeaving${counter}`);
+    experienceReasonForLeavingLabel.innerHTML = "Reason for leaving";
+    // input
+    let experienceReasonForLeavingInput = document.createElement("input");
+    experienceReasonForLeavingInput.setAttribute("type", "text");
+    experienceReasonForLeavingInput.setAttribute("name", `experienceReasonForLeaving${counter}`);
+    experienceReasonForLeavingInput.setAttribute("id", `experienceReasonForLeaving${counter}`);
+
+    experienceReasonForLeavingContainer.appendChild(experienceReasonForLeavingLabel);
+    experienceReasonForLeavingContainer.appendChild(experienceReasonForLeavingInput);
+
+    // =========================== headers ===========================
+    let employerHeading = document.createElement("h3");
+    employerHeading.setAttribute("class", "span-12");
+    employerHeading.innerHTML = "Employer";
+    let positionHeading = document.createElement("h3");
+    positionHeading.setAttribute("class", "span-12");
+    positionHeading.innerHTML = "Position";
     // =========================== spacers ===========================
     let spacer1 = document.createElement("div");
     spacer1.setAttribute("class", "span-6");
     let spacer2 = document.createElement("div");
-    spacer1.setAttribute("class", "span-6");
-
+    spacer2.setAttribute("class", "span-6");
+    let spacer3 = document.createElement("div");
+    spacer3.setAttribute("class", "span-6");
+    let spacer4 = document.createElement("div");
+    spacer4.setAttribute("class", "span-6");
+    let spacer5 = document.createElement("div");
+    spacer5.setAttribute("class", "span-6");
+    let spacer6 = document.createElement("div");
+    spacer6.setAttribute("class", "span-6");
     // =========================== append ===========================
+    experience.appendChild(employerHeading);
     experience.appendChild(experienceEmployerContainer);
     experience.appendChild(experienceSupervisorContainer);
     experience.appendChild(spacer1);
     experience.appendChild(experienceEmployerPhoneContainer);
     experience.appendChild(experienceEmployerEMailContainer);
-
     experience.appendChild(spacer2);
     experience.appendChild(experienceAddressContainer);
+    experience.appendChild(experienceContactPermissionContainer);
+
+    experience.appendChild(positionHeading);
+    experience.appendChild(experiencePositionTitleContainer);
+    experience.appendChild(spacer3);
+    experience.appendChild(experienceEmploymentStartContainer);
+    experience.appendChild(experienceEmploymentEndContainer);
+    experience.appendChild(spacer4);
+    experience.appendChild(experienceCompensationStartContainer);
+    experience.appendChild(experienceCompensationEndContainer);
+    experience.appendChild(spacer5);
+    experience.appendChild(experienceDutiesContainer);
+    experience.appendChild(spacer6);
+    experience.appendChild(experienceReasonForLeavingContainer);
 
     workExperiences.appendChild(experience);
   }
-  addWorkExperience(counters.workExperience);
+
+  let addWorkExpButton = document.getElementById("addWorkExp");
+  addWorkExpButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    addWorkExperience(counters.workExperience);
+    counters.workExperience += 1;
+  });
 
   let addEducationItemButton = document.getElementById("addEducationItem");
   addEducationItemButton.addEventListener("click", function (e) {
