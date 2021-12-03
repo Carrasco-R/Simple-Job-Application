@@ -767,10 +767,156 @@ window.onload = function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     const data = new FormData(this);
-    for (const input of data.entries()) {
-      console.log(input[0] + ": " + input[1]);
-    }
+    validateForm(data);
   });
 };
 
-function validateForm() {}
+function validateForm(data) {
+  const validationMap = {
+    firstName: textValidation.small,
+    lastName: textValidation.small,
+    middleName: textValidation.small,
+    email: validateEmail,
+    telephone: validatePhoneNumber,
+    mobilephone: validatePhoneNumber,
+    over18: validateRadio,
+    street: textValidation.large,
+    city: textValidation.large,
+    state: textValidation.small,
+    zip: validateZip,
+    ssn: validateSSN,
+
+    acceptedTerms: validateRadio,
+  };
+
+  // reset errors
+  Object.keys(validationMap).forEach((key) => {
+    document.getElementById(`error-${key}`).innerHTML = "&nbsp;";
+  });
+  for (const [key, value] of data.entries()) {
+    console.log(key + ": " + value);
+    const fn = validationMap[key];
+    if (fn) {
+      const message = fn(value, key);
+      if (message) {
+        document.getElementById(`error-${key}`).innerHTML = message;
+      }
+    }
+  }
+}
+
+const textValidation = {
+  small: validateText(30),
+  medium: validateText(50),
+  large: validateText(150),
+};
+
+function validateText(maxLength) {
+  return function (value) {
+    let erorrString = null;
+    if (isEmpty(value)) {
+      erorrString = "Required!";
+    } else if (!validateLength(value, 0, maxLength)) {
+      erorrString = `Must be within 0-${maxLength} characters`;
+    }
+    return erorrString;
+  };
+}
+function validateDate(value) {
+  const { year, monthIndex, day } = extractDate(value);
+  if (Number.isNaN(year)) {
+    return "Please enter a valid date";
+  } else if (!(day >= 1 && day <= 31)) {
+    return "Please enter a valid day";
+  } else if (!(monthIndex >= 0 && monthIndex <= 11)) {
+    return "Please enter a valid month";
+  }
+}
+function extractDate(value) {
+  const [endYYYY, startMM, startDD] = [4, 5, 8]; // YYYY/MM/DD
+  const year = Number.parseInt(value.slice(0, endYYYY));
+  const monthIndex = Number.parseInt(value.slice(startMM, startDD - 1)) - 1; // zero-based month
+  const day = Number.parseInt(value.slice(startDD));
+  const date = new Date(year, monthIndex, day);
+  date.setHours(0, 0, 0, 0);
+  return { date, year, monthIndex, day };
+}
+function validateRadio(value) {
+  let errorString = null;
+  if (value !== "yes" && value !== "no") {
+    errorString = "Must be Yes or No";
+  }
+  return errorString;
+}
+function validatePhoneNumber(value) {
+  let erorrString = null;
+  if (!validateLength(value, 0, 11)) {
+    erorrString = "Must be valid phone number";
+  } else if (!isNum) {
+    erorrString = "This field must be a number";
+  }
+  return erorrString;
+}
+function validateSSN(value) {
+  let erorrString = null;
+  if (isEmpty(value)) {
+    erorrString = "Required!";
+  } else if (!validateLength(value, 9, 9)) {
+    erorrString = "Must be 9 digits";
+  } else if (!isNum) {
+    erorrString = "This field must be a number";
+  }
+  return erorrString;
+}
+function validateEmail(value) {
+  let erorrString = null;
+  if (isEmpty(value)) {
+    erorrString = "Email is required!";
+  } else if (!validateEmailString(value)) {
+    erorrString = "Please fix your email: letters, numbers, underscores, periods, dashes, and one '@' are allowed. ";
+  }
+  return erorrString;
+}
+function validateEmailString(email) {
+  let re = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return re.test(email);
+  // http://zparacha.com/validate-email-address-using-javascript-regular-expression
+}
+function validateZip(value) {
+  let erorrString = null;
+  if (isEmpty(value)) {
+    erorrString = "Zip code is required!";
+  } else if (!validateZipString(value)) {
+    erorrString = "Must be 5 digits or include a '-' if 9 digits";
+  } else if (!isNum) {
+    erorrString = "This field must be a number";
+  }
+  return erorrString;
+}
+function validateZipString(zip) {
+  // let isValidZip = /^([0-9]{5})(?:[-\s]*([0-9]{4}))?$/;
+  let isValidZip = /^([0-9]{5})+(-([0-9]{4}))?$/;
+
+  return isValidZip.test(zip);
+}
+function validateLength(value, minLength, maxLength) {
+  let length;
+  if (typeof value == "number") {
+    length = value.toString().length;
+  } else if (typeof value == "string") {
+    length = value.length;
+  }
+  return length <= maxLength && length >= minLength ? true : false;
+}
+
+function validateNumRange(value, min, max) {
+  return value >= min && value <= max ? true : false;
+}
+
+function isEmpty(value) {
+  return value.length == 0 ? true : false;
+}
+
+function isNum(value) {
+  return typeof Number.parseInt(value) == "number" ? true : false;
+}
