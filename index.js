@@ -1136,6 +1136,7 @@ function validateForm(data, counters) {
   let raceFound = false;
   let availabilityFound = false;
   for (const [key, value] of data.entries()) {
+    console.log({ key, value });
     if (key == "race") {
       raceFound = true;
       if (!options.race.includes(value)) {
@@ -1150,8 +1151,8 @@ function validateForm(data, counters) {
 
     if (key.includes(".")) {
       const [propertyKey, index] = key.split(".");
-      console.log(key.split("."));
-      console.log({ propertyKey, index, value });
+      // console.log(key.split("."));
+      // console.log({ propertyKey, index, value });
       const fn = reactiveValidationMap[propertyKey];
       if (fn) {
         const message = fn(value, propertyKey);
@@ -1165,7 +1166,6 @@ function validateForm(data, counters) {
       if (fn) {
         const message = fn(value, key);
         if (message) {
-          console.log({ key, value });
           document.getElementById(`error-${key}`).innerHTML = message;
           foundErrors = true;
         }
