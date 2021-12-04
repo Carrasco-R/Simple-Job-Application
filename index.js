@@ -964,8 +964,10 @@ window.onload = function () {
   let form = document.getElementById("form");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const data = new FormData(this);
-    validateForm(data, counters);
+    document.location.pathname = "/thanks.html";
+
+    // const data = new FormData(this);
+    // validateForm(data, counters);
   });
 };
 
@@ -1135,18 +1137,15 @@ function validateForm(data, counters) {
 
   let raceFound = false;
   let availabilityFound = false;
+  document.getElementById("error-race").innerHTML = "&nbsp;";
+  document.getElementById("error-availability").innerHTML = "&nbsp;";
+
   for (const [key, value] of data.entries()) {
     console.log({ key, value });
     if (key == "race") {
       raceFound = true;
-      if (!options.race.includes(value)) {
-        document.getElementById("error-race").innerHTML = "Required";
-      }
     } else if (key == "availability") {
       availabilityFound = true;
-      if (!options.availability.includes(value)) {
-        document.getElementById("error-avilability").innerHTML = "Required";
-      }
     }
 
     if (key.includes(".")) {
@@ -1157,8 +1156,10 @@ function validateForm(data, counters) {
       if (fn) {
         const message = fn(value, propertyKey);
         if (message) {
-          document.getElementById(`error-${propertyKey}.${index}`).innerHTML = message;
           foundErrors = true;
+          console.log("here");
+          console.log(foundErrors);
+          document.getElementById(`error-${propertyKey}.${index}`).innerHTML = message;
         }
       }
     } else {
@@ -1172,16 +1173,17 @@ function validateForm(data, counters) {
       }
     }
   }
-  if (!raceFound) {
+  if (raceFound == false) {
     document.getElementById("error-race").innerHTML = "Required";
   }
-  if (!availabilityFound) {
+  if (availabilityFound == false) {
     document.getElementById("error-availability").innerHTML = "Required";
   }
-  if (foundErrors) {
+  if (foundErrors == true || raceFound == false || availabilityFound == false) {
     errorNotification.innerHTML = "Please review your application and fix any field errors";
     errorNotification.setAttribute("style", "display:block");
     window.scrollTo(0, 0);
+  } else {
   }
 }
 
