@@ -96,7 +96,7 @@ input[type="checkbox"] {
 }
 @media screen and (max-width: 99999px) {
   main {
-    padding: 15vh 15vw 5vh;
+    padding: 15vh 14vw 5vh;
   }
   .field-grid {
     grid-template-columns: repeat(12, 1fr);
