@@ -964,10 +964,8 @@ window.onload = function () {
   let form = document.getElementById("form");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    document.location.pathname = "/thanks.html";
-
-    // const data = new FormData(this);
-    // validateForm(data, counters);
+    const data = new FormData(this);
+    validateForm(data, counters);
   });
 };
 
@@ -1184,6 +1182,7 @@ function validateForm(data, counters) {
     errorNotification.setAttribute("style", "display:block");
     window.scrollTo(0, 0);
   } else {
+    document.location.pathname = "/thanks.html";
   }
 }
 
