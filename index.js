@@ -970,7 +970,7 @@ window.onload = function () {
 };
 
 const options = {
-  race: ["white", "blackAfrAm", "amrIndAlskNtv", "asian", "hawiPaciIsld", "latino"],
+  race: ["white", "blackAfrAm", "amrIndAlskNtv", "asian", "hawiPaciIsld", "latino", "other"],
   availability: ["sun", "mon", "tues", "wed", "thurs", "fri", "sat"],
   gender: ["male", "female", "other"],
   employmentDesired: ["full-time", "part-time"],
@@ -1050,7 +1050,7 @@ function validateForm(data, counters) {
     state: validateOptions(options.states),
     zip: validateZip,
     ssn: validateSSN,
-    gender: validateOptions(options.gender),
+    // gender: validateOptions(options.gender),
     position: textValidation.medium,
     employmentDesired: validateOptions(options.employmentDesired),
     // availability: todo
